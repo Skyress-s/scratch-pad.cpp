@@ -1,0 +1,7 @@
+# This file is managed by Conan, contents will be overwritten.
+# To keep your changes, remove these comment lines, but the plugin won't be able to modify your requirements
+
+requirements:
+  - "hfsm2/2.5.2"
+  - "boost/1.87.0"
+  - "libassert/2.1.4"
