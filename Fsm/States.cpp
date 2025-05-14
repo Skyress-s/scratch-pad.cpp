@@ -41,6 +41,7 @@ states::TOptState states::Start::process(const CoolEvent& Event)
 
 states::TOptState states::End::process(const UpdateEvent& event)
 {
+	event.m_Coro("Im in Start!");
 	return Start(m_Context);
 }
 
