@@ -4,30 +4,12 @@
 
 #include "States.h"
 
-template <typename EventType>
-states::TOptState states::TBaseState::process(EventType)
-{
-	return std::nullopt;
-}
-// states::TOptState states::Start::process(const UpdateEvent& event)
+// template <typename EventType>
+// states::TOptState states::TBaseState::process(EventType)
 // {
-// 	return Middle(_context);
+	// return std::nullopt;
 // }
-//
-// states::TOptState states::Middle::process(const UpdateEvent& event)
-// {
-// 	if (++m_NumIterations > 10)
-// 	{
-// 		event.m_Coro("Im in state Middle!");
-// 		return End(_context);
-// 	}
-// 	return std::nullopt;
-// }
-//
-// states::TOptState states::End::process(const UpdateEvent& event)
-// {
-// 	return Start(_context);
-// }
+
 states::TOptState states::Start::process(const UpdateEvent& event)
 {
 	event.m_Coro("Im in Start!");

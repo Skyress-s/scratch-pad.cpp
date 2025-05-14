@@ -41,6 +41,7 @@ std::variant<Start, End>;
 
 using TOptState = std::optional<TStateVariant>;
 
+// template <typename T>
 class TBaseState
 {
 public:
@@ -48,27 +49,29 @@ public:
 	{
 	}
 
-	template <typename EventType>
-	TOptState process(EventType);
+	// template <typename EventType>
+	// TOptState process(EventType);
 	// {
-	// return TOptState{};
-	// return std::nullopt;
+		// return std::nullopt;
+		// return TOptState{};
 	// }
 
 protected:
 	std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
 };
 
-template <>
-TOptState TBaseState::process(const UpdateEvent& event);
-template <>
-TOptState TBaseState::process(const CoolEvent& event);
+// template <>
+// TOptState TBaseState::process(const UpdateEvent& event);
+// template <>
+// TOptState TBaseState::process(const CoolEvent& event);
 
-class Start
+class Start : public TBaseState
+// class Start
 {
 public:
 	explicit Start(std::reference_wrapper<fsm_state_transitions::FSM> context)
-		: m_Context(context)
+		: TBaseState(context)
+		// : m_Context(context)
 	{
 	}
 
@@ -81,17 +84,17 @@ public:
 	TOptState process(const CoolEvent& Event);
 
 private:
-	std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
+	// std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
 };
 
 
-// class End : public TBaseState
-class End
+class End : public TBaseState
+// class End
 {
 public:
 	explicit End(std::reference_wrapper<fsm_state_transitions::FSM> context)
-		// : TBaseState(context)
-	: m_Context(context)
+	: TBaseState(context)
+		// : m_Context(context)
 	{
 	}
 
@@ -101,6 +104,7 @@ public:
 	}
 
 	TOptState process(const UpdateEvent& event);
+
 	// Generate a process for all event types we did not use
 	template <typename EventType>
 	TOptState process(EventType)
@@ -108,6 +112,6 @@ public:
 		return std::nullopt;
 	}
 
-	std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
+	// std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
 };
 } // namespace states
