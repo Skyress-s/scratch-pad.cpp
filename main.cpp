@@ -6,6 +6,8 @@
 #include "Fsm/FSMStateTransitions.h"
 #include "Fsm/States.h"
 
+#include "Fsm2/V2.h"
+
 
 using namespace boost::coroutines2;
 
@@ -30,19 +32,24 @@ using namespace boost::coroutines2;
 
 void coro_main(Coro::push_type& Yield)
 {
-	fsm_state_transitions::FSM Fsm {};
+	GameStateMachine Fsm2;
+	Fsm2.startGame(30, 4);
+	// fsm_state_transitions::FSM Fsm {};
 
 	for (int i = 0; i < 100; ++i)
 	{
-		if (i % 3 == 0)
+		if (i % 4 == 0)
 		{
-			Fsm.process(UpdateEvent(Yield));
+			Fsm2.processEvent(event::HitByMonster(4));
+			// Fsm.process(UpdateEvent(Yield));
 		}
 		else
 		{
+			Fsm2.processEvent(event::HitByMonster(2));
 			// Fsm.process(CoolEvent());
 		}
-		std::cout << Fsm.getState() << std::endl;
+		Fsm2.reportCurrentState();
+		// std::cout << Fsm.getState() << std::endl;
 		// Yield("Message!");
 	}
 }
@@ -51,7 +58,7 @@ int main()
 {
 	Coro::pull_type Ccoro {coro_main};
 
-	for (int i = 0; i < 2; ++i)
+	for (int i = 0; i < 2 && Ccoro; ++i)
 	{
 
 	// }
