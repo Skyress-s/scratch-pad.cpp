@@ -31,7 +31,6 @@ class FSM;
 namespace states
 {
 
-
 class Start;
 class End;
 
@@ -41,21 +40,21 @@ std::variant<Start, End>;
 using TOptState = std::optional<TStateVariant>;
 
 // template <typename T>
-class TBaseState
-{
-public:
-	explicit TBaseState(std::reference_wrapper<fsm_state_transitions::FSM> context) : m_Context(context)
-	{
-	}
-
-	// Sadly I cannot get the this template to create functions for all unused handled events
-	// template <typename EventType>
-	// TOptState process(EventType);
-	// {
-	// return std::nullopt;
-	// }
-
-protected:
-	std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
-};
+// class TBaseState
+// {
+// public:
+// 	explicit TBaseState(std::reference_wrapper<fsm_state_transitions::FSM> context) : m_Context(context)
+// 	{
+// 	}
+//
+// 	// Sadly I cannot get the this template to create functions for all unused handled events
+// 	// template <typename EventType>
+// 	// TOptState process(EventType);
+// 	// {
+// 	// return std::nullopt;
+// 	// }
+//
+// protected:
+// 	std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
+// };
 } // states

@@ -40,7 +40,7 @@ void coro_main(Coro::push_type& Yield)
 		}
 		else
 		{
-			Fsm.process(CoolEvent());
+			// Fsm.process(CoolEvent());
 		}
 		std::cout << Fsm.getState() << std::endl;
 		// Yield("Message!");
