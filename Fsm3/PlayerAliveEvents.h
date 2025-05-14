@@ -7,6 +7,11 @@
 namespace v3
 {
 
+
+class Alive
+{
+};
+
 inline CurrentStateVariant onEvent(const state::PlayerAlive& alive, const event::HitByMonster& monster) {
 	monster.Yield("Got hit by monster");
 	std::cout << std::format("PlayerAlive -> HitByMonster force {}\n", monster.forcePoints_);
@@ -16,9 +21,9 @@ inline CurrentStateVariant onEvent(const state::PlayerAlive& alive, const event:
 	}
 
 	if (alive.remainingLives_ > 0)
-		return state::PlayerDead{ alive.remainingLives_ - 1 };
+		return state::GameOver{};
 
-	return state::GameOver{};
+	return alive;
 }
 
 inline CurrentStateVariant onEvent(const state::PlayerAlive& alive, const event::Heal& healingBonus) {

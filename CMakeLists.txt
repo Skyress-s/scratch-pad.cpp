@@ -38,8 +38,6 @@ add_executable(boost_test main.cpp
         Fsm3/GameOverEvents.h
         Fsm3/PlayerAliveEvents.cpp
         Fsm3/PlayerAliveEvents.h
-        Fsm3/PlayerDeadEvents.cpp
-        Fsm3/PlayerDeadEvents.h
         Fsm3/States.h
         Fsm3/V2.cpp
         Fsm3/V2.h)

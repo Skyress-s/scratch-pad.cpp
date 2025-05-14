@@ -7,7 +7,6 @@
 #include "EventsTypes.h"
 namespace v3
 {
-
 inline CurrentStateVariant onEvent(const state::GameOver& over, const event::Restart& restart) {
 	std::cout << std::format("GameOver -> restart\n");
 

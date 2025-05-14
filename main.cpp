@@ -46,10 +46,10 @@ void coro_main(Coro::push_type& Yield)
 		}
 		else
 		{
-			Fsm2.processEvent(v3::event::HitByMonster(Yield, 2));
+			// Fsm2.processEvent(v3::event::HitByMonster(Yield, 2));
 			// Fsm.process(CoolEvent());
 		}
-		Fsm2.reportCurrentState();
+		// Fsm2.reportCurrentState();
 		// std::cout << Fsm.getState() << std::endl;
 		// Yield("Message!");
 	}

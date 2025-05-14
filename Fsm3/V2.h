@@ -7,8 +7,6 @@
 #include "EventsTypes.h"
 #include "GameOverEvents.h"
 #include "PlayerAliveEvents.h"
-#include "PlayerDeadEvents.h"
-
 
 namespace v3
 {
@@ -61,10 +59,10 @@ public:
 				{
 					std::cout << std::format("PlayerAlive {} remaining lives {}\n", alive.health_, alive.remainingLives_);
 				},
-				[](const state::PlayerDead& dead)
-				{
-					std::cout << std::format("PlayerDead, remaining lives {}\n", dead.remainingLives_);
-				},
+				// [](const state::PlayerDead& dead)
+				// {
+				// 	std::cout << std::format("PlayerDead, remaining lives {}\n", dead.remainingLives_);
+				// },
 				[](const state::GameOver& over)
 				{
 					std::cout << std::format("GameOver\n");
