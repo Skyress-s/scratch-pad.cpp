@@ -11,10 +11,10 @@
 namespace fsm_state_transitions {
     class FSM;
 
-    using Start = states::Start<FSM>;
-    using Middle = states::Middle<FSM>;
-    using End = states::End<FSM>;
-    using State = std::variant<Start, Middle, End>;
+    using Start = states::Start;
+    using End = states::End;
+
+    using State = std::variant<Start, End>;
     using OptState = std::optional<State>;
 
     class FSM {
@@ -36,7 +36,7 @@ namespace fsm_state_transitions {
 
 
     private:
-        adc::TFSMStateTransitions<Start, Middle, End> _fsm;
+        adc::TFSMStateTransitions<Start, End> _fsm;
     };
 
 }

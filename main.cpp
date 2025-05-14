@@ -34,7 +34,14 @@ void coro_main(Coro::push_type& Yield)
 
 	for (int i = 0; i < 100; ++i)
 	{
-		Fsm.process(UpdateEvent(Yield));
+		if (i % 3 == 0)
+		{
+			Fsm.process(UpdateEvent(Yield));
+		}
+		else
+		{
+			Fsm.process(CoolEvent());
+		}
 		std::cout << Fsm.getState() << std::endl;
 		// Yield("Message!");
 	}
