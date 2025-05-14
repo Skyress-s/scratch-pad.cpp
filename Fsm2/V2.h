@@ -84,22 +84,22 @@ inline void GameHealthFSMTest()
 
     try
     {
-        game.processEvent(event::HitByMonster{30});
-        game.reportCurrentState();
-        game.processEvent(event::HitByMonster{30});
-        game.reportCurrentState();
-        game.processEvent(event::HitByMonster{30});
-        game.reportCurrentState();
-        game.processEvent(event::HitByMonster{30});
-        game.reportCurrentState();
-        game.processEvent(event::Restart{100});
-        game.reportCurrentState();
-        game.processEvent(event::HitByMonster{60});
-        game.reportCurrentState();
-        game.processEvent(event::HitByMonster{50});
-        game.reportCurrentState();
-        game.processEvent(event::Restart{100});
-        game.reportCurrentState();
+        // game.processEvent(event::HitByMonster{30});
+        // game.reportCurrentState();
+        // game.processEvent(event::HitByMonster{30});
+        // game.reportCurrentState();
+        // game.processEvent(event::HitByMonster{30});
+        // game.reportCurrentState();
+        // game.processEvent(event::HitByMonster{30});
+        // game.reportCurrentState();
+        // game.processEvent(event::Restart{100});
+        // game.reportCurrentState();
+        // game.processEvent(event::HitByMonster{60});
+        // game.reportCurrentState();
+        // game.processEvent(event::HitByMonster{50});
+        // game.reportCurrentState();
+        // game.processEvent(event::Restart{100});
+        // game.reportCurrentState();
     }
     catch (std::exception& ex)
     {

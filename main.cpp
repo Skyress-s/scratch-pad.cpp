@@ -40,12 +40,12 @@ void coro_main(Coro::push_type& Yield)
 	{
 		if (i % 4 == 0)
 		{
-			Fsm2.processEvent(event::HitByMonster(4));
+			Fsm2.processEvent(event::HitByMonster(Yield, 4));
 			// Fsm.process(UpdateEvent(Yield));
 		}
 		else
 		{
-			Fsm2.processEvent(event::HitByMonster(2));
+			Fsm2.processEvent(event::HitByMonster(Yield, 2));
 			// Fsm.process(CoolEvent());
 		}
 		Fsm2.reportCurrentState();

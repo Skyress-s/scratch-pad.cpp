@@ -6,6 +6,7 @@
 #include "EventsTypes.h"
 
 inline CurrentStateVariant onEvent(const state::PlayerAlive& alive, const event::HitByMonster& monster) {
+	monster.Yield("Got hit by monster");
 	std::cout << std::format("PlayerAlive -> HitByMonster force {}\n", monster.forcePoints_);
 	if (alive.health_ > monster.forcePoints_)
 	{
