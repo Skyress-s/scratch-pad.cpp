@@ -31,6 +31,17 @@ add_executable(boost_test main.cpp
         Fsm2/PlayerDeadEvents.h
         Fsm2/States.h
         Fsm2/V2.cpp
-        Fsm2/V2.h)
+        Fsm2/V2.h
+        Fsm3/CurrentStateVariant.h
+        Fsm3/EventsTypes.h
+        Fsm3/GameOverEvents.cpp
+        Fsm3/GameOverEvents.h
+        Fsm3/PlayerAliveEvents.cpp
+        Fsm3/PlayerAliveEvents.h
+        Fsm3/PlayerDeadEvents.cpp
+        Fsm3/PlayerDeadEvents.h
+        Fsm3/States.h
+        Fsm3/V2.cpp
+        Fsm3/V2.h)
 
 target_link_libraries(boost_test PRIVATE #[[libassert::assert]] Boost::coroutine hfsm2::hfsm2)
