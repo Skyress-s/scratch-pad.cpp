@@ -10,22 +10,7 @@
 	// return std::nullopt;
 // }
 
-states::TOptState states::Start::process(const UpdateEvent& event)
-{
-	event.m_Coro("Im in Start!");
-	return End(m_Context);
-}
 
-states::TOptState states::Start::process(const CoolEvent& Event)
-{
-	return End(m_Context);
-}
-
-states::TOptState states::End::process(const UpdateEvent& event)
-{
-	event.m_Coro("Im in Start!");
-	return Start(m_Context);
-}
 
 // states::TOptState states::End::process(const CoolEvent& Event)
 // {
