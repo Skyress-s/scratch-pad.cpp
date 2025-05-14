@@ -1,64 +1,19 @@
 #pragma once
 
 // #include "Turnstile.h"
+#include "TBaseState.h"
 
 #include <optional>
 #include <string>
 #include <variant>
 
-#include "../CoroDefs.h"
 
-
-namespace fsm_state_transitions
-{
-class FSM;
-}
-
-struct UpdateEvent
-{
-	explicit UpdateEvent(Coro::push_type& Coro)
-		: m_Coro(Coro)
-	{
-	}
-
-	Coro::push_type& m_Coro;
-};
-
-struct CoolEvent
-{
-};
 
 
 namespace states
 {
 // using namespace std::chrono_literals;
 
-class Start;
-class End;
-
-using TStateVariant =
-std::variant<Start, End>;
-
-using TOptState = std::optional<TStateVariant>;
-
-// template <typename T>
-class TBaseState
-{
-public:
-	explicit TBaseState(std::reference_wrapper<fsm_state_transitions::FSM> context) : m_Context(context)
-	{
-	}
-
-	// template <typename EventType>
-	// TOptState process(EventType);
-	// {
-		// return std::nullopt;
-		// return TOptState{};
-	// }
-
-protected:
-	std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
-};
 
 // template <>
 // TOptState TBaseState::process(const UpdateEvent& event);
@@ -112,6 +67,5 @@ public:
 		return std::nullopt;
 	}
 
-	// std::reference_wrapper<fsm_state_transitions::FSM> m_Context;
 };
-} // namespace states
+}

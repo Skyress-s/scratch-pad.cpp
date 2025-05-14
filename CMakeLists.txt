@@ -14,6 +14,8 @@ add_executable(boost_test main.cpp
         Fsm/FSMStateTransitions.h
         CoroDefs.h
         Fsm/FSMStateTransitions.cpp
-        Fsm/States.cpp)
+        Fsm/States.cpp
+        Fsm/TBaseState.cpp
+        Fsm/TBaseState.h)
 
 target_link_libraries(boost_test PRIVATE #[[libassert::assert]] Boost::coroutine hfsm2::hfsm2)
