@@ -4,6 +4,3 @@
 requirements:
   - "glfw/3.3.8"
   - "glad/0.1.36"
-  - "hfsm2/2.5.2"
-  - "boost/1.87.0"
-  - "libassert/2.1.4"
