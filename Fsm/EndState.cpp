@@ -11,4 +11,9 @@ TOptState End::process(const UpdateEvent& event)
 	event.m_Coro("Im in Start!");
 	return std::optional<std::variant<Start, End>>(Start(m_Context));
 }
+
+TOptState End::process(const CoolEvent& event)
+{
+	return *this;
+}
 } // states

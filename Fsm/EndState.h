@@ -23,6 +23,7 @@ public:
 	}
 
 	TOptState process(const UpdateEvent& event);
+		TOptState process(const CoolEvent& event);
 
 	// Generate a process for all event types we did not use
 	// template <typename EventType>

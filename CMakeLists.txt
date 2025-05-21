@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 #find_package(libassert)
 find_package(Boost)
 find_package(hfsm2)
+find_package(glad)
+find_package(glfw3)
 
 
 add_executable(boost_test main.cpp
@@ -42,4 +44,4 @@ add_executable(boost_test main.cpp
         Fsm3/V2.cpp
         Fsm3/V2.h)
 
-target_link_libraries(boost_test PRIVATE #[[libassert::assert]] Boost::coroutine hfsm2::hfsm2)
+target_link_libraries(boost_test PRIVATE #[[libassert::assert]] Boost::coroutine hfsm2::hfsm2 glad::glad glfw)
